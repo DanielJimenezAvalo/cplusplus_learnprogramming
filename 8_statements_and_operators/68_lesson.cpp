@@ -1,5 +1,0 @@
-/*
-
-prueba para github
-
-*/
