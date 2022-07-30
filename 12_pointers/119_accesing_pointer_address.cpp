@@ -49,6 +49,7 @@ int main(){
     cout<<"address of score is "<<&score<<endl;
     cout<<"value of score_ptr is "<<score_ptr<<endl;
     cout<<"address of score_ptr is "<<&score_ptr<<endl;
+    cout<<"value pointed with pointer is "<<*score_ptr<<endl;
 
 
     cout<<endl;
