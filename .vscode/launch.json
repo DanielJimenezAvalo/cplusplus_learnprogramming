@@ -9,12 +9,12 @@
         ""
       ],
       "stopAtEntry": false,
-      "cwd": "/config/workspace/curso_cplusplus/cplusplus_learnprogramming/12_pointers",
+      "cwd": "/home/workspace/workspace/curso_cplusplus/cplusplus_learnprogramming/13_classes_and_objects",
       "environment": [],
-      "program": "/config/workspace/curso_cplusplus/cplusplus_learnprogramming/12_pointers/build/Debug/outDebug",
+      "program": "/home/workspace/workspace/curso_cplusplus/cplusplus_learnprogramming/13_classes_and_objects/build/Debug/outDebug",
       "internalConsoleOptions": "openOnSessionStart",
       "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
       "externalConsole": false,
       "setupCommands": [
         {
