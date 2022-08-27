@@ -6,22 +6,47 @@ using namespace std;
 
 class Player{
     //attributes
+<<<<<<< Updated upstream
     string name;
     int health;
     int xp;
+=======
+    string name {"player"};
+    int health {100};
+    int xp {3};
+>>>>>>> Stashed changes
 
 
     //methods
     void talk(string);
     bool is_death();
 
+<<<<<<< Updated upstream
 
 
+=======
+};
+
+class Account{
+    //atributes 
+    string name {"Account"};
+    double balance {0.0};
+
+    //methods
+    bool deposit(double);
+    bool withdraw(double);
+>>>>>>> Stashed changes
 };
 
 
 int main(){
 
+<<<<<<< Updated upstream
+=======
+    Account frank_account;
+    Account jim_account;
+
+>>>>>>> Stashed changes
     Player frank;
     Player hero;
 
