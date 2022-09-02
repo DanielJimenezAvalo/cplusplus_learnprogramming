@@ -20,6 +20,24 @@
     - can't create new operators
     - [], (), ->, and the assigment operator (=) must be declared as member methods
     - other operators can be declared as member methods or global functions
+
+% Copy assignment operator (=)
+    - C++ provides a default assignment operator used for assigning one object to another
+        Mystring s1 {"Frank"};
+        Mystring s2 = s1;       //NOT assignment
+                                //same as Mystring s2{s1}
+        s2 = s1                 //assignment
+    
+    - Default is memberwise assignment (shallow copy)
+        if we have raw pointer data member we must deep copy
+
+% overloading the copy assigment operator (deep copy)
+        
+        Type &Type::operartor=(const Type &rhs);
+        Mystring &Mystring::operator=(cosnt Mystring &rhs);
+        s2 = s1;                // we write this
+        s2.operator=(s1)        //operator= method is called
+
 */
 
 #include <iostream>
@@ -28,13 +46,10 @@
 using namespace std;
 
 int main(){
-    Mystring empty;         //no -arg constructor
-    Mystring larry("Larry"); //overloaded constructor
-    Mystring stooges {larry}; //copy constructor
-
-    empty.display();
-    larry.display();
-    stooges.display();
-
+    Mystring a {"Hello"};   // overloaded constructor
+    Mystring b;             // no-arg constructor
+    b=a;                    // copy assigment
+                            // b.operator=(a)
+    b="This is a test";      //b.operator=("This is a test")
     return 0;
 }

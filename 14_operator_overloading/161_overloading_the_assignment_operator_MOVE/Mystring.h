@@ -9,6 +9,9 @@ class Mystring {
         Mystring(const char *s);    //overloaded constructor
         Mystring(const Mystring &source);   //copy constructor
         ~Mystring(); //destructor
+
+        Mystring &operator=(const Mystring &rhs);    //Copy assignment
+
         void display() const;
         int get_lenght() const;
         const char *get_str() const;
