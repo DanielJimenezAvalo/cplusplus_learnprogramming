@@ -54,6 +54,18 @@
         Mystring &Mystring::operator=(Mystring &&rhs);
         s1=Mystring{"Joe"};     //move operator= called
         s1="Frank";             //move operator= called
+..................................................................................
+%operator overloading unary operators as member methods (++, --, -, !)
+
+        ReturnType Type::operatorOp();
+
+        Number Number::operator-() const;
+        Number Number::operator++();    //pre - increment
+        Number Number::operator++(int); //post - increment
+        bool Number::operator!() const;
+
+        
+
 
 
 */

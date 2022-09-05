@@ -1,5 +1,6 @@
 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   "C_Cpp_Runner.cCompilerPath": "/usr/bin/gcc",
   "C_Cpp_Runner.cppCompilerPath": "/usr/bin/g++",
   "C_Cpp_Runner.debuggerPath": "/usr/bin/gdb",
@@ -29,6 +30,8 @@
     "**/.vscode/**"
   ]
 =======
+=======
+>>>>>>> Stashed changes
     "files.associations": {
         "iostream": "cpp",
         "array": "cpp",
@@ -82,5 +85,8 @@
         "typeinfo": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
