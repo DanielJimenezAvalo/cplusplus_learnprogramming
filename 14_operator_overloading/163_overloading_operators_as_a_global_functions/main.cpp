@@ -21,6 +21,7 @@
     - can't create new operators
     - [], (), ->, and the assigment operator (=) must be declared as member methods
     - other operators can be declared as member methods or global functions
+
 ··················································································
 % Copy assignment operator (=)
     - C++ provides a default assignment operator used for assigning one object to another
@@ -38,6 +39,7 @@
         Mystring &Mystring::operator=(cosnt Mystring &rhs);
         s2 = s1;                // we write this
         s2.operator=(s1)        //operator= method is called
+
 ··················································································
 % Move assignment operator (=)
 
@@ -54,6 +56,7 @@
         Mystring &Mystring::operator=(Mystring &&rhs);
         s1=Mystring{"Joe"};     //move operator= called
         s1="Frank";             //move operator= called
+
 ..................................................................................
 %operator overloading unary operators as member methods (++, --, -, !)
 
@@ -74,6 +77,25 @@
         bool Number::operator<(const Number &rhs) const;
 
 ..................................................................................
+%unary operators as global functions (++, --, -, !)
+
+        ReturnType operatorOp(Type &obj);
+
+        Number operator-(const Number &obj);
+        Number operator++(Number &obj);     //pre-increment
+        Number operator++(Number &obj, int);     //post-increment
+        bool operator!(const Number &obj);
+
+%binary operators as global functions (+,-,==,!=,<,>,etc)
+
+        ReturnType operatorOp(const Type &lhs, const Type &rhs);
+
+        Number operator+(const Number &lhs, const Number &rhs);
+        Number operator-(const Number &lhs, const Number &rhs);
+        bool operator==(const Number &lhs, const Number &rhs);
+        bool operator<(const Number &lhs, const Number &rhs);
+
+
 
 */
 

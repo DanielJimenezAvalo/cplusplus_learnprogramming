@@ -70,6 +70,8 @@ Mystring &Mystring::operator=(Mystring &&rhs){
     return *this;
     }
 
+//activate this when we what overloading with member methods
+/*
 //overloading operator = (Equality)
 bool Mystring::operator==(const Mystring &rhs) const {
 
@@ -98,7 +100,7 @@ Mystring Mystring::operator+(const Mystring &rhs) const {
     delete [] buff;
     return temp;
 }
-
+*/
 
 
 //Display method
@@ -114,4 +116,49 @@ const char *Mystring::get_str() const { return str;}
 
 
 
+// activate this when we want overloading with global members
+/*
+//equality global function
+bool operator==(const Mystring &lhs, const Mystring &rhs){
+    return (std::strcmp( lhs.str, rhs.str) == 0);
 
+}
+
+//makelowecase global function
+Mystring operator-(const Mystring &obj){
+    char *buff = new char[std::strlen(obj.str)+1];
+    std::strcpy(buff, obj.str);
+    for(size_t i=0; i<std::strlen(buff); i++){
+        buff[i]=std::tolower(buff[i]);
+    }
+    Mystring temp {buff};
+    delete [] buff;
+    return temp;
+}
+
+//concatenation global function
+Mystring operator+(const Mystring &lhs, const Mystring &rhs){
+    char *buff = new char[std::strlen(lhs.str) + std::strlen(rhs.str)+1];
+    std::strcpy(buff,lhs.str);
+    std::strcat(buff,rhs.str);
+    Mystring temp {buff};
+    delete [] buff;
+    return temp;
+}
+*/
+
+
+//overloaded insertion operator 
+std::ostream &operator<<(std::ostream &os, const Mystring &rhs){
+    os<<rhs.str;
+    return os;
+}
+
+//overloaded extraction operator 
+std::istream &operator>>(std::istream &in, Mystring &rhs){
+    char *buff = new char[1000];
+    in>>buff;
+    rhs=Mystring{buff};
+    delete [] buff;
+    return in;
+}

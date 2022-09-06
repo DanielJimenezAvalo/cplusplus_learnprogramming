@@ -21,6 +21,7 @@
     - can't create new operators
     - [], (), ->, and the assigment operator (=) must be declared as member methods
     - other operators can be declared as member methods or global functions
+
 ··················································································
 % Copy assignment operator (=)
     - C++ provides a default assignment operator used for assigning one object to another
@@ -38,6 +39,7 @@
         Mystring &Mystring::operator=(cosnt Mystring &rhs);
         s2 = s1;                // we write this
         s2.operator=(s1)        //operator= method is called
+
 ··················································································
 % Move assignment operator (=)
 
@@ -54,6 +56,7 @@
         Mystring &Mystring::operator=(Mystring &&rhs);
         s1=Mystring{"Joe"};     //move operator= called
         s1="Frank";             //move operator= called
+        
 ..................................................................................
 %operator overloading unary operators as member methods (++, --, -, !)
 
@@ -74,6 +77,54 @@
         bool Number::operator<(const Number &rhs) const;
 
 ..................................................................................
+%unary operators as global functions (++, --, -, !)
+
+        ReturnType operatorOp(Type &obj);
+
+        Number operator-(const Number &obj);
+        Number operator++(Number &obj);     //pre-increment
+        Number operator++(Number &obj, int);     //post-increment
+        bool operator!(const Number &obj);
+
+%binary operators as global functions (+,-,==,!=,<,>,etc)
+
+        ReturnType operatorOp(const Type &lhs, const Type &rhs);
+
+        Number operator+(const Number &lhs, const Number &rhs);
+        Number operator-(const Number &lhs, const Number &rhs);
+        bool operator==(const Number &lhs, const Number &rhs);
+        bool operator<(const Number &lhs, const Number &rhs);
+
+..................................................................................
+%steram insertion and extraction operators (<<, >>)
+
+Doesn't make sense to implement as member methods
+    - Left operant must be a user-defined class
+    - not the way we normally use these operators
+
+% stream insertion operator (<<)
+
+        std::ostream &operator<<(std::ostream &os, cosnt Mystring &obj){
+            os<<obj.str;        //if friend function
+            // os<<obj.get_str();   //if not a friend function
+            return os;
+        }
+
+return a reference to the ostream so we can keep inserting 
+don't return ostream by value
+
+% stream extraction operator(>>)
+
+        std::istream &operator>>(std::istream &is, Mystring &obj){
+            char *buff = new char[1000];
+            is>>buff;
+            obj = Mystring{buff}; //if you have copy or mov e assignment
+            delete [] buff;
+            return is;
+        }
+    
+    return a reference to the istream so we can keep inserting
+    update the object passed in
 
 */
 
@@ -88,26 +139,17 @@ int main(){
 
     Mystring larry{"Larry"};
     Mystring moe{"Moe"};
+    Mystring curly;
 
-    Mystring stooge = larry;
-    larry.display();
-    moe.display();
+    cout<<"enter the third stooge's first name: ";
+    cin>>curly;
 
-    cout<<(larry==moe)<<endl;
-    cout<<(larry==stooge)<<endl;
+    cout<<"the three stooges are "<<larry<<", "<<moe<<" and "<<curly<<endl;
 
-    larry.display();
-    Mystring larry2 = -larry;
-    larry2.display();
+    cout<<"\nEnter the three stooges names separated by a space: ";
+    cin>>larry>>moe>>curly;
 
-    Mystring stooges = larry + "Moe";
-    //Mystring stooges = "Larry" + moe;
-
-    Mystring two_stooges = moe + " " + "Larry";
-    two_stooges.display();
-
-    Mystring three_stooges = moe + " " + larry + " " + "Curly";
-    three_stooges.display();
+    cout<<"The three stooges are "<<larry<<", "<<moe<<", and "<<curly<<endl;
     
     return 0;
 
