@@ -8,11 +8,7 @@ class Mystring {
         Mystring();  // no-args constructor
         Mystring(const char *s);    //overloaded constructor
         Mystring(const Mystring &source);   //copy constructor
-<<<<<<< Updated upstream
         ~Mystring(); //destructor
-=======
-        ~Mystring();
->>>>>>> Stashed changes
         void display() const;
         int get_lenght() const;
         const char *get_str() const;

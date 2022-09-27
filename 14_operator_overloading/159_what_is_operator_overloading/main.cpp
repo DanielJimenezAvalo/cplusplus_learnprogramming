@@ -3,11 +3,7 @@
 &&&&& operator overloading
 &&&&&&&&&&&&&&&&&&&&&&&&
 % what is operator overloading?
-<<<<<<< Updated upstream
     - using traditional operators such as +, =, *, etc. with user-defined types 
-=======
-    - using traditional opersators such as +, =, *, etc. with user-defined types 
->>>>>>> Stashed changes
     - allows user defined types to behave similar to built in types
     - can make code more readable and writeble
     - not done automatically (except for the assignment operator). they must be explicitly defined
@@ -27,7 +23,7 @@
 */
 
 #include <iostream>
-#include "Mystring.h"
+#include "./Mystring.h"
 
 using namespace std;
 
