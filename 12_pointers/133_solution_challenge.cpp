@@ -1,13 +1,36 @@
+/**
+ * @file 133_solution_challenge.cpp
+ * @author Daniel Jimenez (danieljimenez1185@gmail.com)
+ * @brief the function expects two arrays of integers and their sizes and
+ * dynamically allocates a new array of integers whose size is the product of the 
+ * 2 array sizes. for example, if the array1 has 3 elements and array2 has 2, the 
+ * new array will have 6 element, for of the product one-by-one of the elements. 
+ * Finally, print the elements and the size
+ * @version 0.1
+ * @date 2022-09-29
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include<iostream>
 #include<string>
 #include<vector>
 
 using namespace std;
 
+/**
+ * @brief this function create the new array reciving the arrays and their sizes 
+ * 
+ * @param arr1 is a pointer to first array
+ * @param size1 is the dimension of the first array
+ * @param arr2 is a pointer to second array
+ * @param size2 is the dimension of the second array
+ * @return int* is a pointer of the new array
+ */
 int *apply_all(const int *const arr1, size_t size1, const int *const arr2, size_t size2){
     int *new_array {};
 
-    new_array = new int[size1 * size2]; //allocate 15 imteger in the heap
+    new_array = new int[size1 * size2]; //allocate 15 integer in the heap
 
     int position {0};
 
@@ -23,7 +46,12 @@ int *apply_all(const int *const arr1, size_t size1, const int *const arr2, size_
 }
 
 
-
+/**
+ * @brief this function print the elements of the new array
+ * 
+ * @param arr is the pointer to the new array
+ * @param size is the size of the new array
+ */
 void print(const int *const arr, size_t size){
 
     cout<<"[ ";
