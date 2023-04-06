@@ -8,7 +8,7 @@ class Mystring {
         Mystring();  // no-args constructor
         Mystring(const char *s);    //overloaded constructor
         Mystring(const Mystring &source);   //copy constructor
-        ~Mystring();
+        ~Mystring(); //destructor
         void display() const;
         int get_lenght() const;
         const char *get_str() const;

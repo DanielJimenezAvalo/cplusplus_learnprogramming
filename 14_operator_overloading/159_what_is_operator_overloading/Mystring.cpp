@@ -1,6 +1,6 @@
 #include <cstring>
 #include <iostream>
-#include "Mystring.h"
+#include "./Mystring.h"
 
 //no-arg constructor
 Mystring::Mystring()
